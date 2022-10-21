@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função funciona?</title>
+</head>
+
+<body>
+    <script>
+        Inicio()
+
+        function Inicio() {
+            var Escolha_inicial = prompt("1) Calculadora de idades| 2) Lanches| 3) Geometria| 4) Termômetro")
+            if (Escolha_inicial == 1) {
+                Calculadora();
+            }
+            else if (Escolha_inicial == 2) {
+                CalcularmeuLanche();
+            }
+            else if (Escolha_inicial == 3) {
+                Geometria();
+            }
+            else if(Escolha_inicial == 4) {
+                Termometro()
+            }
+            else {
+                alert("Tente novamente")
+                Inicio();
+            }
+
+
+        }
+        function Calculadora() {
+            var Escolha_calculadora = prompt("Qual é o seu pet? Cachorro, Tartaruga ou Cavalo")
+            switch (escolha) {
+                case "Cachorro":
+                    CalcularIdadeCachorro();
+
+                    break
+
+                case "Tartaruga":
+                    CalcularIdadeTartaruga();
+
+                    break
+
+                case "Cavalo":
+                    CalcularIdadeCavalo();
+            };
+        }
+
+
+
+        function CalcularIdadeCachorro() {
+            var Idadecachorro = prompt("Quantos anos tem o seu cachorro?")
+            var MultiplicaçãoAnosCachorro = 7
+            IdadeFinalCachorro = Idadecachorro * MultiplicaçãoAnosCachorro
+            var Nomecachorro = prompt("Qual é o nome do seu cachorro?")
+
+            alert(Nomecachorro + " tem cerca de " + IdadeFinalCachorro + " anos de verdade! Um " + escolha + " tem uma relação de " + MultiplicaçãoAnosCachorro + " anos de cachorro para cada 1 ano humano")
+
+            inicio()
+        }
+
+        function CalcularIdadeTartaruga() {
+            var tartaruga = prompt("Quantos aneis tem a sua tartaruga?")
+            IdadeFinalTartaruga = tartaruga / DivisãoAnosTartaruga
+            var DivisãoAnosTartaruga = 2
+            var Nometartaruga = prompt("Qual é o nome da sua tartaruga?")
+
+            alert(Nometartaruga + " tem cerca de " + IdadeFinalTartaruga + " anos de verdade! Um " + escolha + " tem uma relação de " + DivisãoAnosTartaruga + " anos de " + escolha + " para cada 1 ano humano")
+       
+            inicio()
+        }
+
+        function CalcularIdadeCavalo() {
+            var cavalo = prompt("Quantos anos tem o seu cavalo?")
+            var Nomecavalo = prompt("Qual é o nome do seu cavalo?")
+            var MultiplicaçãoAnosCavalo = 6.5
+            IdadeFinalCavalo = cavalo * MultiplicaçãoAnosCavalo
+
+            alert(Nomecavalo + " tem cerca de " + IdadeFinalCavalo + " anos de verdade! Um " + escolha + " tem uma relação de " + MultiplicaçãoAnosCavalo + " anos de " + escolha + " para cada 1 ano humano")
+        
+            inicio()
+        }
+
+        function CalcularmeuLanche() {
+            var alimentação = prompt("1) Comidas balanceada|2) Doces|")
+            if (alimentação == 1) {
+
+                ComidaBalanceada();
+            }
+
+            else if (alimentação == 2) {
+
+                Doces();
+            }
+            else {
+                alert("Peço que coloque só números")
+                CalcularmeuLanche()
+            }
+        }
+        function ComidaBalanceada() {
+            var Quantia_lanches = prompt("Quantas refeições você tem no dia a dia");
+            var Idade_lanches = prompt("Quantos anos você tem?");
+            var Quantia_lanches_anual = Quantia_lanches * 365;
+            var IdadeTotal = 75 - Idade_lanches;
+            Quantia_lanches_final = IdadeTotal * Quantia_lanches_anual;
+            alert("Você comerá mais ou menos " + Quantia_lanches_final + " alimentações até o fim da sua vida")
+            Inicio()
+        }
+
+        function Doces() {
+            var Quantia_doces = prompt("Quantas colheres (de chá) você ingere no dia a dia")
+            var Idade_doces = prompt("Quantos anos você tem?")
+            var AçucarConta = 9 - Quantia_doces
+            if (AçucarConta < 0) {
+                alert("Você está se alimentando bem pelo lado do açucar, cerca de " + AçucarConta + "(o recomendado é 9 colheres) recomendo que se mantenha assim")
+                Inicio();
+            }
+            else {
+                alert("Melhor tomar cuidado com a quantia de açucar, você esta ingerindo cerca de " + AçucarConta + " colheres (o recomendado é 9 colheres) ")
+                Inicio();
+            }
+        }
+
+    function Geometria(){
+    let opcao = parseInt(prompt('Calcular propiedades de um círculo:\n 1) Circunferência\n 2) Área'));
+
+    switch (opcao) {
+        case 1:
+            calcularCircunferencia();
+        break;
+        case 2:
+            calcularArea();
+        break;
+        case 3:
+            sair();
+        break;
+        default:
+            erro();
+        break;
+    }
+}    
+
+function calcularCircunferencia(){
+    let circunf = 0, pi = 3.14;
+    
+    let raio = parseFloat(prompt('Informe o valor do raio do círculo'));
+    
+    circunf = 2 * pi * raio
+    alert(`A circunferência é: ${circunf}`);
+    inicio();
+    
+}
+
+function calcularArea(){
+    let area = 0, pi = 3.14;
+
+    let raio = parseFloat(prompt('Informe o valor do raio do círculo'));
+    area = pi * raio**2;
+
+    alert(`A área do círculo é de: ${area}`);
+    inicio();
+}
+
+function Termometro() {
+    var escolha = prompt("1)Converter Celsius-Fahrenheit|| 2)Converter Fahrenheit-Celsius.")
+    if (escolha == '1') {
+        converterCelsiusFahrenheit();
+    } else if (escolha == '2') {
+        converterFahrenheitCelsius();
+    } else {
+        erro();
+    }
+}
+
+function converterCelsiusFahrenheit(){
+    var celsius = parseInt(prompt("Qual é a temperatura em Celsius?"));
+    var fahrenheit = celsius * 1.8 + 32; 
+    alert(celsius + "°C é igual a " + fahrenheit + "°F");
+    inicio();
+}
+
+function converterFahrenheitCelsius(){
+    var fahrenheit = parseInt(prompt("Qual é a temperatura em Fahrenheit?"));
+    var celsius = (fahrenheit - 32) / 1.8;
+    alert(fahrenheit + "°F é igual a " + celsius + "°C");
+    inicio();
+}
+
+function erro() {
+    alert("Por favor, digite '1' ou '2'");
+    Termometro();
+}
+
+escolha();
+
+function sair() {
+    window.close();
+}
+
+function erro() {
+    alert('Por favor, informe um número entre 1 e 3.');
+    inicio();
+}
+
+    </script>
+</body>
+
+</html>
